@@ -1,33 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 # Run container with Dockerfile
 ```
 docker build -t react-app .
@@ -84,6 +54,10 @@ it will look something like this (this picture is not the entire logs)
 ![image](https://github.com/user-attachments/assets/921e182d-2da9-48ed-a424-d4ff61e8a801)
 and just like the docker container docker compose will be running on http://localhost:4000 too
 
+to stop and remove docker compose container
+```
+docker compose down
+```
 
 
 
