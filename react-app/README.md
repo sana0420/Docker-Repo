@@ -28,43 +28,62 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Run container with Dockerfile
+```
+docker build -t react-app .
+```
+you will get output like this:
+![image](https://github.com/user-attachments/assets/f1914f96-f98d-4411-a183-73238da422a8)
 
-### `npm run eject`
+check to see if the image is successfully created with 
+```
+docker images
+```
+you'll see this
+![image](https://github.com/user-attachments/assets/f82c7cc3-c55a-456a-967b-e0cd97f7dcd9)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+to run the container write
+```
+ docker run -p 4000:4000 -d -v $(pwd):/home/react-app/data --name react-container react-app
+```
+we used -d so we will get an id in output.
+to see if the container ir running run
+```
+docker ps
+```
+you'll see
+![image](https://github.com/user-attachments/assets/ba84dc96-559a-4c75-8692-6d49168d1864)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+the container is running on port 4000 of host too.
+![image](https://github.com/user-attachments/assets/f7add3c2-8a7f-47c9-9199-5e31606d7fdf)
+to stop container and remove
+```
+docker stop react-container
+```
+```
+docker rm react-container
+```
+#Run container with Docker compose
+```
+docker compose build
+```
+you'll see image with
+![image](https://github.com/user-attachments/assets/e6e0817c-8ef1-416e-b20c-bbe8cf39a525)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+to run 
+```
+docker compose up -d
+```
+![image](https://github.com/user-attachments/assets/7eaf44ba-d7cf-4909-bd96-165031cfe279)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+you can see logs to check the container
+```
+docker compose logs
+```
+it will look something like this (this picture is not the entire logs)
+![image](https://github.com/user-attachments/assets/921e182d-2da9-48ed-a424-d4ff61e8a801)
+and just like the docker container docker compose will be running on http://localhost:4000 too
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
