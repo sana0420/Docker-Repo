@@ -13,7 +13,7 @@ services:
       MYSQL_ROOT_PASSWORD: password    #you can change the mysql root password here
       MYSQL_DATABASE: lamp_db    #you can change the database name here
     volumes:
-      - ./mysql_data:/var/lib/mysql    #this line maps the content of ./mysql_data in your pc to the /var/lib/mysql of the container
+      - mysql_data:/var/lib/mysql    #this line maps the content of ./mysql_data in your pc to the /var/lib/mysql of the container
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
@@ -22,3 +22,5 @@ services:
       - db    #this line links this container to the db container
     environment:
       PMA_HOST: db
+volumes:
+  mysql_data:
