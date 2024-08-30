@@ -9,7 +9,4 @@ RUN mvn clean package
 FROM openjdk
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-cp","app.jar", "com.example.App"]
-
-
-#ENTRYPOINT [ "java", "-jar", "App.jar"] 
+ENTRYPOINT ["java","-cp","app.jar", "com.example.App"] 

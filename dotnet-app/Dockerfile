@@ -8,6 +8,6 @@ COPY . .
 EXPOSE 5001
 
 # Hot reload: Use dotnet watch run
-ENTRYPOINT ["dotnet", "watch", "run"]
+ENTRYPOINT ["dotnet", "watch", "run","--urls", "http://0.0.0.0:5001"]
 
 # Optional: Volume mount for development
