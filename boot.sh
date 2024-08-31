@@ -89,4 +89,4 @@ fi
 cd ..
 
 printf "\n";
-printf "shutdown script finished\n";
+printf "boot script finished\n";
