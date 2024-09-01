@@ -1,8 +1,8 @@
-#Build image
+# Build image
 ```
 docker build --tag java-app .
 ```
-#Run container
+# Run container
 ```
  docker run -d \
       -v java_vol:/app \ 
@@ -10,7 +10,7 @@ docker build --tag java-app .
       --publish=8089:8080 \
       java-appp;
 ```
-#Stopping & Removing
+# Stopping & Removing
 ```
 docker stop java-container
 ```
