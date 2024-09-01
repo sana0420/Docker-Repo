@@ -33,7 +33,7 @@ docker stop react-container
 ```
 docker rm react-container
 ```
-#Run container with Docker compose
+# Run container with Docker compose
 ```
 docker compose build
 ```
