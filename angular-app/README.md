@@ -4,7 +4,7 @@ docker build --tag angular-app .
 ```
 # Push image
 ```
-docker login
+docker login //if pushing for the first time you need to login else no need
 docker tag angular-app username/angular-app
 docker push username/angular-app
 //use your dockerhub username in place of username
