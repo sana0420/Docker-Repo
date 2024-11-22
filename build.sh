@@ -14,7 +14,7 @@ CONTAINER4="python-container"
 CONTAINER5="react-container"
 CONTAINER6="lamp-container"
 CONTAINER7="node-container"
-echo "Build a particular container or all select a number \n 1. angular 2.react
+echo "Build and Push a particular container or all select a number \n 1. angular 2.react
 3.dotnet 4.node 5.lamp 6.java 7.python 8.all: "
 read 
 if [[ $a -eq 1]];
@@ -32,6 +32,8 @@ then
 else
   printf "creating angular image --->\n"
   docker image build --tag $IMAGE1 .;
+  docker tag &IMAGE1 sana653/&IMAGE1;
+  docker push sana653/&IMAGE1;
   printf "starting angular container --->\n"
   docker run -d -v angular_vol:/usr/src/app \
   -v /usr/src/app/node_modules \
@@ -55,6 +57,8 @@ then
   else
     printf "creating dotnet image --->\n"
     docker image build --tag $IMAGE2 .;
+    docker tag &IMAGE2 sana653/&IMAGE2;
+    docker push sana653/&IMAGE2;
     printf "starting dotnet container --->\n"
     docker run -d -v dotnet_vol:/app \
     -v ~/.vsdbg:/remote_debugger:rw \
@@ -79,6 +83,8 @@ then
   else
     printf "creating react image --->\n";
     docker image build --tag $IMAGE5 .;
+    docker tag &IMAGE5 sana653/&IMAGE5;
+    docker push sana653/&IMAGE5;
     printf "starting react container --->\n"
     docker run -d \
     -v react_vol:/app \
@@ -103,6 +109,8 @@ then
   else
     printf "creating node image --->\n";
     docker image build --tag $IMAGE7 .;
+    docker tag &IMAGE7 sana653/&IMAGE7;
+    docker push sana653/&IMAGE7;
     printf "starting node container --->\n"
     docker run -d \
     -v node_vol:/app \
@@ -135,6 +143,8 @@ then
   else
     printf "creating java image --->\n"
     docker image build --tag $IMAGE3 .;
+    docker tag &IMAGE3 sana653/&IMAGE3;
+    docker push sana653/&IMAGE3;
     printf "starting java container --->\n"
     docker run -d \
     -v java_vol:/app \
@@ -159,6 +169,8 @@ then
   else
     printf "creating python image --->\n"
     docker image build --no-cache --tag $IMAGE4 .;
+    docker tag &IMAGE4 sana653/&IMAGE4;
+    docker push sana653/&IMAGE4;
     printf "starting python container --->\n"
     docker run -d \
     -v python_vol:/app \
@@ -182,6 +194,8 @@ then
   else
     printf "creating angular image --->\n"
     docker image build --tag $IMAGE1 .;
+    docker tag &IMAGE1 sana653/&IMAGE1;
+    docker push sana653/&IMAGE1;
     printf "starting angular container --->\n"
     docker run -d -v angular_vol:/usr/src/app \
     -v /usr/src/app/node_modules \
@@ -204,6 +218,8 @@ then
   else
     printf "creating dotnet image --->\n"
     docker image build --tag $IMAGE2 .;
+    docker tag &IMAGE2 sana653/&IMAGE2;
+    docker push sana653/&IMAGE2;
     printf "starting dotnet container --->\n"
     docker run -d -v dotnet_vol:/app \
     -v ~/.vsdbg:/remote_debugger:rw \
@@ -226,6 +242,8 @@ then
   else
     printf "creating java image --->\n"
     docker image build --tag $IMAGE3 .;
+    docker tag &IMAGE3 sana653/&IMAGE3;
+  docker push sana653/&IMAGE3;
     printf "starting java container --->\n"
     docker run -d \
     -v java_vol:/app \
@@ -249,6 +267,8 @@ then
   else
     printf "creating node image --->\n";
     docker image build --tag $IMAGE7 .;
+    docker tag &IMAGE7 sana653/&IMAGE7;
+  docker push sana653/&IMAGE7;
     printf "starting node container --->\n"
     docker run -d \
     -v node_vol:/app \
@@ -270,6 +290,8 @@ then
   else
     printf "creating python image --->\n"
     docker image build --no-cache --tag $IMAGE4 .;
+    docker tag &IMAGE4 sana653/&IMAGE4;
+  docker push sana653/&IMAGE4;
     printf "starting python container --->\n"
     docker run -d \
     -v python_vol:/app \
@@ -293,6 +315,8 @@ then
   else
     printf "creating react image --->\n";
     docker image build --tag $IMAGE5 .;
+    docker tag &IMAGE5 sana653/&IMAGE5;
+  docker push sana653/&IMAGE5;
     printf "starting react container --->\n"
     docker run -d \
     -v react_vol:/app \
