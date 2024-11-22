@@ -2,6 +2,14 @@
 ```
 docker build --tag dotnet-app .
 ```
+# Push image
+```
+docker login //if pushing for the first time you need to login else no need
+docker tag dotnet-app username/dotnet-app
+docker push username/dotnet-app
+//use your dockerhub username in place of username
+```
+
 # Run container
 ```
  docker run -d -v dotnet_vol:/app \
