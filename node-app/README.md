@@ -1,13 +1,20 @@
-Make sure the you're in the node app directory.Then to build node-app image 
-run
+Make sure the you're in the node app directory.
+# build node-app image run
 ```
 docker build --tag node-app .
 ```
 you can check with docker images and you'll see our node-app image
 ![1](https://github.com/user-attachments/assets/d4f569ed-6cc5-4064-8d21-d5d8b6e0fe1a)
 
+# Push image
+```
+docker login //if pushing for the first time you need to login else no need
+docker tag node-app username/node-app
+docker push username/node-app
+//use your dockerhub username in place of username
+```
 
-to run node-app-container 
+# to run node-app-container 
 ```
 $ docker run -d \
     -v node_vol:/app \
