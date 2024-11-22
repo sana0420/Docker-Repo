@@ -1,4 +1,4 @@
-# Run container with Dockerfile
+# Build container with Dockerfile
 ```
 docker build -t react-app .
 ```
@@ -11,6 +11,13 @@ docker images
 ```
 you'll see this
 ![image](https://github.com/user-attachments/assets/f82c7cc3-c55a-456a-967b-e0cd97f7dcd9)
+# Push image
+```
+docker login //if pushing for the first time you need to login else no need
+docker tag react-app username/react-app
+docker push username/react-app
+//use your dockerhub username in place of username
+```
 
 to run the container write
 ```
